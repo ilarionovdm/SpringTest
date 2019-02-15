@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/html">
+    <body>
+        <div>
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
+        <div>
+            <form method="post" action="index">
+                <input type="text" name="text" placeholder="Введите сообщение"  autocomplete="off">
+                <input type="text" name="tag" placeholder="Введите тэг" autocomplete="off">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <div>
+            <form method="post" action="filter">
+                <input type="text" name="tag" autocomplete="off">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <button type="submit">Найти</button>
+            </form>
+        </div>
+        <div>
+            <form method="post" action="delete">
+                <input type="text" name="id" autocomplete="off">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <button type="submit">Удалить</button>
+            </form>
+        </div>
+        <div>Список сообщений:</div>
+        {{#messages}}
+            <div>
+                <b>{{id}}</b>
+                <span>{{text}}</span>
+                <i>{{tag}}</i>
+            </div>
+        {{/messages}}
+    </body>
+    <div align="bottom">
+        <div>История:</div>
+        {{#history}}
+            <div>
+                <b>{{id}}</b>
+                <span>{{action}}</span>
+                <span>{{time}}</span>
+            </div>
+        {{/history}}
+    </div>
+</html>

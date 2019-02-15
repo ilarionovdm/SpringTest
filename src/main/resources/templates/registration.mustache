@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+{{#message}}
+    {{message}}
+{{/message}}
+
+<form action="/registration" method="post">
+    <div><label> User Name : <input type="text" name="username" autocomplete="off"/> </label></div>
+    <div><label> Password: <input type="password" name="password" autocomplete="off"/> </label></div>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    <div><input type="submit" value="Add new user"/></div>
+</form>
+</body>
+</html>
