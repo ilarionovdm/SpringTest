@@ -1,7 +1,7 @@
 package ru.dilarionov.springtest.user.repos;
 
-import ru.dilarionov.springtest.user.domain.Message;
 import org.springframework.data.repository.CrudRepository;
+import ru.dilarionov.springtest.user.domain.Message;
 
 import java.util.List;
 

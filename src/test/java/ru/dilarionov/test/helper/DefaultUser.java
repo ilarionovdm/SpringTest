@@ -1,4 +1,4 @@
-package helper;
+package ru.dilarionov.test.helper;
 
 import ru.dilarionov.springtest.user.domain.User;
 
